@@ -1,0 +1,70 @@
+.frontend-common:
+  image: node:18
+  before_script:
+    - cd ./code-quality-analyzer-frontend
+  tags:
+    - vm3
+
+3-build-frontend-job:
+  stage: build
+  extends: .frontend-common
+  script:
+    - npm install --legacy-peer-deps
+    - CI=false npm run build
+  artifacts:
+    paths:
+      - "./code-quality-analyzer-frontend/build"
+      - "./code-quality-analyzer-frontend/package.json"
+
+3-code-quality-frontend-job:
+  stage: code-quality
+  extends: .frontend-common
+  needs: [ "3-build-frontend-job" ]
+  script:
+    - npm install -D
+    - npx eslint@8.53.0 src
+    - npx eslint@8.53.0 src --format=json --output-file=./react_eslint_report.json
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/code-quality-analyzer-frontend/react_eslint_report.json
+    expire_in: never
+
+3-publish-frontend-job:
+  stage: publish
+  extends: .frontend-common
+  needs: [ "3-code-quality-frontend-job", "3-build-frontend-job" ]
+  image: docker:stable
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ''
+  services:
+    - docker:dind
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_BRANCH == "develop"
+  script:
+    - docker --version
+    - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS docker.io
+    - docker build -t docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:frontend-$CI_COMMIT_SHORT_SHA .
+    - docker push docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:frontend-$CI_COMMIT_SHORT_SHA
+
+3-deploy-frontend-job:
+  stage: deploy
+  extends: .frontend-common
+  needs: [ "3-publish-frontend-job" ]
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_BRANCH == "develop"
+  script:
+    - chmod og= $ID_RSA
+    - apk update && apk add openssh-client
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker login
+      -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS docker.io"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker pull
+      docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:frontend-$CI_COMMIT_SHORT_SHA"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker container
+      rm -f frontend-container || true"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run
+      -d -p 80:3000 --restart=always --name frontend-container docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:frontend-$CI_COMMIT_SHORT_SHA"
+  environment:
+    name: production
+    url: http://csci5308vm3.research.cs.dal.ca

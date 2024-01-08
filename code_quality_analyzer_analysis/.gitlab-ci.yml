@@ -1,0 +1,64 @@
+.analysis-service-common:
+  before_script:
+    - cd ./code_quality_analyzer_analysis
+  tags:
+    - vm3
+
+2-build-analysis-service-job:
+  stage: build
+  extends: .analysis-service-common
+  image: docker:stable
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ''
+  services:
+    - docker:dind
+  script:
+    - docker build -t docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:analysis-service-$CI_COMMIT_SHORT_SHA .
+    - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS docker.io
+    - docker push docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:analysis-service-$CI_COMMIT_SHORT_SHA
+
+2-test-analysis-service-job:
+  stage: test
+  extends: .analysis-service-common
+  needs: [ "2-build-analysis-service-job" ]
+  image: python:3.12-alpine
+  script:
+    - pip install -r requirements.txt
+    - python manage.py test
+
+2-code-quality-analysis-service-job:
+  stage: code-quality
+  extends: .analysis-service-common
+  needs: [ "2-test-analysis-service-job" ]
+  image: python:3.12-alpine
+  script:
+    - pip install -r requirements.txt
+    - pip install pylint==3.0.2
+    - pylint code_quality_analyzer_analysis --output-format=json:django_pylint_report.json,colorized --exit-zero
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/code_quality_analyzer_analysis/django_pylint_report.json
+    expire_in: never
+
+2-deploy-analysis-service-job:
+  stage: deploy
+  extends: .analysis-service-common
+  needs: [ "2-code-quality-analysis-service-job" ]
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_BRANCH == "develop"
+  script:
+    - chmod og= $ID_RSA
+    - apk update && apk add openssh-client
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker login
+      -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS docker.io"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker pull
+      docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:analysis-service-$CI_COMMIT_SHORT_SHA"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker container
+      rm -f analysis-service-container || true"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run
+      -d -p 8000:8000 --restart=always -v /home/deployer/spring-boot-app:/home/deployer/spring-boot-app --name analysis-service-container docker.io/$DOCKER_HUB_USER/$DOCKER_HUB_REPO:analysis-service-$CI_COMMIT_SHORT_SHA"
+  environment:
+    name: production
+    url: http://csci5308vm3.research.cs.dal.ca:8000

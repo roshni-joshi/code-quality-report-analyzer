@@ -1,0 +1,58 @@
+.backend-common:
+  image: maven:3.9.5-amazoncorretto-17
+  before_script:
+    - cd ./code-quality-analyzer-backend
+  tags:
+    - vm3
+
+1-build-backend-job:
+  stage: build
+  extends: .backend-common
+  script:
+    - mvn compile
+
+1-test-backend-job:
+  stage: test
+  extends: .backend-common
+  needs: [ "1-build-backend-job" ]
+  script:
+    - mvn test
+
+1-code-quality-backend-job:
+  stage: code-quality
+  extends: .backend-common
+  needs: [ "1-test-backend-job" ]
+  script:
+    - java -jar $CI_PROJECT_DIR/.gitlab/DesigniteJava.jar -i $CI_PROJECT_DIR/code-quality-analyzer-backend -o $CI_PROJECT_DIR/spring_boot_smells
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/spring_boot_smells
+    expire_in: never
+
+1-package-backend-job:
+  stage: package
+  extends: .backend-common
+  needs: [ "1-code-quality-backend-job" ]
+  script:
+    - mvn package
+  artifacts:
+    paths:
+      - "./code-quality-analyzer-backend/target/*.jar"
+
+1-deploy-backend-job:
+  stage: deploy
+  extends: .backend-common
+  needs: [ "1-package-backend-job" ]
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_BRANCH == "develop"
+  script:
+    - chmod og= $ID_RSA
+    - apk update && apk add openssh-client
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "lsof -t -i :8080 | xargs -r kill"
+    - scp -i $ID_RSA -o StrictHostKeyChecking=no target/code-quality-analyzer-backend-0.0.1-SNAPSHOT.jar $SERVER_USER@$SERVER_IP:/home/deployer/spring-boot-app/app.jar
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cd /home/deployer/spring-boot-app && bash -c 'setsid java -cp app.jar:\"./lib/DesigniteJava.jar\" org.springframework.boot.loader.JarLauncher > output.log 2>&1 &'"
+
+  environment:
+    name: production
+    url: http://csci5308vm3.research.cs.dal.ca:8080

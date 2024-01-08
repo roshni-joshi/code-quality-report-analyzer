@@ -1,0 +1,1126 @@
+{
+  "full_repo": {
+    "commit2": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 31,
+          "Feature Concentration": 19,
+          "Unstable Dependency": 14,
+          "God Component": 4
+        },
+        "top_entities": {
+          "input||org.apache.maven": 8,
+          "input||org.apache.maven.artifact": 6,
+          "input||org.apache.maven.lifecycle": 3,
+          "input||org.apache.maven.model.building": 3,
+          "input||org.apache.maven.model.profile": 3,
+          "input||org.apache.maven.model.path": 2,
+          "input||org.apache.maven.execution": 2,
+          "input||org.apache.maven.plugin": 2,
+          "input||org.apache.maven.repository.legacy.resolver.transform": 2,
+          "input||org.apache.maven.api.services": 2
+        },
+        "total_smells": 68
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 263,
+          "Broken Hierarchy": 42,
+          "Feature Envy": 26,
+          "Deficient Encapsulation": 20,
+          "Insufficient Modularization": 18,
+          "Cyclically-dependent Modularization": 13,
+          "Broken Modularization": 13,
+          "Cyclic Hierarchy": 3,
+          "Wide Hierarchy": 1,
+          "Rebellious Hierarchy": 1,
+          "Missing Hierarchy": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 11,
+          "input||org.apache.maven.artifact.repository.metadata||ArtifactRepositoryMetadata": 3,
+          "input||org.apache.maven.internal.impl||DefaultMessageBuilder": 2,
+          "input||org.apache.maven.project||EmptyLifecycleExecutor": 2,
+          "input||org.apache.maven.artifact.repository.metadata||SnapshotArtifactRepositoryMetadata": 2,
+          "input||org.apache.maven.lifecycle.providers.packaging||JarLifecycleMappingProvider": 2,
+          "input||org.apache.maven.repository||MetadataResolutionResult": 2,
+          "input||org.apache.maven.settings.building||UrlSettingsSource": 2,
+          "input||org.apache.maven.cli.transfer||BatchModeMavenTransferListener": 2,
+          "input||org.apache.maven.api.services||DependencyCollectorRequest.DependencyCollectorRequestBuilder": 2
+        },
+        "total_smells": 401
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 577,
+          "Magic Number": 358,
+          "Long Parameter List": 134,
+          "Complex Method": 57,
+          "Long Identifier": 48,
+          "Complex Conditional": 47,
+          "Empty catch clause": 18,
+          "Missing default": 9,
+          "Long Method": 6
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 22,
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 21,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 12,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 9,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 9,
+          "input||org.apache.maven.lifecycle||LifecycleExecutorTest||testCalculationOfBuildPlanWithMultipleExecutionsOfModello": 8,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolve": 8,
+          "input||org.apache.maven.plugin||MethodMap||isStrictMethodInvocationConvertible": 7,
+          "input||org.apache.maven.artifact.versioning||DefaultArtifactVersionTest||testVersionParsing": 7,
+          "input||org.apache.maven.project||PomConstructionTest||testBuildPluginInterpolation": 7
+        },
+        "total_smells": 1254
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 34,
+          "Global State": 7
+        },
+        "top_entities": {
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 2,
+          "input||org.apache.maven.settings.building||DefaultSettingsBuilder": 1,
+          "input||org.apache.maven.model.building||DefaultModelBuilderFactory": 1,
+          "input||org.apache.maven.internal.impl||DefaultProjectManager": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest": 1,
+          "input||org.apache.maven.project||PomConstructionTest": 1,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest": 1,
+          "input||org.apache.maven.internal.impl||TestApi": 1,
+          "input||org.apache.maven.plugin||DefaultBuildPluginManager": 1,
+          "input||org.apache.maven.plugin||ReflectionValueExtractorTest.Dependency": 1
+        },
+        "total_smells": 41
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 208,
+          "Missing assertion": 70,
+          "Empty test": 6,
+          "Exceptional handling": 3,
+          "Conditional test logic": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest||testTransitiveResolutionOrder": 2,
+          "input||org.apache.maven.project.artifact||MavenMetadataSourceTest||testShouldNotCarryExclusionsOverFromDependencyToDependency": 2,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testFlatTrickyUrls": 2,
+          "input||org.apache.maven.artifact.versioning||VersionRangeTest||testOrder0": 2,
+          "input||org.apache.maven.repository.internal||RepositorySystemTest||testResolveVersion": 2,
+          "input||org.apache.maven.building||DefaultProblemCollectorTest||testSetSource": 1,
+          "input||org.apache.maven.project||DefaultMavenProjectBuilderTest||testBuildParentVersionRangeLocallyWithoutChildVersion": 1,
+          "input||org.apache.maven.lifecycle||DefaultLifecyclesTest||testCustomLifecycle": 1,
+          "input||org.apache.maven.project||GraphTest||testGraph": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactoryTest||isNoSnapshotUpdatesTest": 1
+        },
+        "total_smells": 288
+      },
+      "total_smells": 2052,
+      "user": "user2"
+    },
+    "commit3": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Feature Concentration": 24,
+          "Cyclic Dependency": 20,
+          "Unstable Dependency": 12,
+          "God Component": 3,
+          "Dense Structure": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.artifact": 6,
+          "input||org.apache.maven.model.building": 6,
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.lifecycle.internal": 3,
+          "input||org.apache.maven.project": 3,
+          "input||org.apache.maven.artifact.versioning": 2,
+          "input||org.apache.maven.artifact.metadata": 2,
+          "input||org.apache.maven.model": 2,
+          "input||org.apache.maven.artifact.repository": 2,
+          "input||<All packages>": 1
+        },
+        "total_smells": 60
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 237,
+          "Broken Hierarchy": 36,
+          "Deficient Encapsulation": 23,
+          "Broken Modularization": 17,
+          "Insufficient Modularization": 16,
+          "Feature Envy": 13,
+          "Cyclically-dependent Modularization": 7,
+          "Rebellious Hierarchy": 2,
+          "Missing Hierarchy": 2,
+          "Cyclic Hierarchy": 1,
+          "Multipath Hierarchy": 1,
+          "Unexploited Encapsulation": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 4,
+          "input||org.apache.maven.project.artifact||ActiveProjectArtifact": 2,
+          "input||org.apache.maven.lifecycle.internal.stub||LifecycleTaskSegmentCalculatorStub": 2,
+          "input||org.apache.maven.artifact.repository||ArtifactRepository": 2,
+          "input||org.apache.maven.api.services||ToolchainsBuilderException": 2,
+          "input||org.apache.maven.repository.legacy||DefaultUpdateCheckManagerTest": 2,
+          "input||org.apache.maven.model.building||ArtifactModelSource": 2,
+          "input||org.apache.maven.plugin||DefaultExtensionRealmCache.CacheKey": 2,
+          "input||org.apache.maven.toolchain||DefaultToolchain": 2,
+          "input||org.apache.maven||MissingModuleException": 2
+        },
+        "total_smells": 356
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 527,
+          "Magic Number": 304,
+          "Long Parameter List": 123,
+          "Complex Method": 48,
+          "Long Identifier": 43,
+          "Complex Conditional": 38,
+          "Missing default": 12,
+          "Empty catch clause": 11,
+          "Long Method": 9
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 16,
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 14,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 11,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 8,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolveTransitively": 8,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 7,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 7,
+          "input||org.apache.maven.project||ProjectSorter||ProjectSorter": 7,
+          "input||org.apache.maven.toolchain.merge||MavenToolchainMergerTest||testMergeJdkExtend": 6,
+          "input||org.apache.maven.repository.metadata||DefaultClasspathTransformationTest||setUp": 6
+        },
+        "total_smells": 1115
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 33,
+          "Global State": 3
+        },
+        "top_entities": {
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 1,
+          "input||org.apache.maven.lifecycle.internal||LifecycleModuleBuilder": 1,
+          "input||org.apache.maven.project||DefaultProjectBuilder": 1,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest": 1,
+          "input||org.apache.maven.lifecycle.internal||DefaultLifecycleExecutionPlanCalculator": 1,
+          "input||org.apache.maven.plugin||ReflectionValueExtractorTest.Project": 1,
+          "input||org.apache.maven.project||AbstractMavenProjectTestCase": 1,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver": 1,
+          "input||org.apache.maven.lifecycle.internal.builder.multithreaded||MultiThreadedBuilder": 1,
+          "input||org.apache.maven.lifecycle.internal.builder||BuilderCommon": 1
+        },
+        "total_smells": 36
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 196,
+          "Missing assertion": 43,
+          "Empty test": 10,
+          "Exceptional handling": 4,
+          "Conditional test logic": 3
+        },
+        "top_entities": {
+          "input||org.apache.maven.repository.internal||RepositorySystemTest||testResolveVersionRange": 2,
+          "input||org.apache.maven.plugin||PluginManagerTest||testMojoWhereInternallyStatedDependencyIsOverriddenByProject": 2,
+          "input||org.apache.maven.artifact.versioning||VersionRangeTest||testOrder0": 2,
+          "input||org.apache.maven.repository.internal||DefaultArtifactDescriptorReaderTest||testMng5459": 2,
+          "input||org.apache.maven.project||ProjectBuilderTest||testReadParentAndChildWithRegularVersionSetParentFile": 2,
+          "input||org.apache.maven.project||PomConstructionTest||testPluginDeclarationsRetainPomOrderAfterInjectionOfDefaultPlugins": 2,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest||testTransitiveResolutionOrder": 2,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testFlatTrickyUrls": 2,
+          "input||org.apache.maven.cli||MavenCliTest||testCalculateDegreeOfConcurrency": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveRuntimeScopeOverTestScope": 1
+        },
+        "total_smells": 256
+      },
+      "total_smells": 1823,
+      "user": "user3"
+    },
+    "commit4": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 22,
+          "Feature Concentration": 15,
+          "Unstable Dependency": 12,
+          "God Component": 3,
+          "Dense Structure": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.model.building": 6,
+          "input||org.apache.maven.artifact": 3,
+          "input||org.apache.maven.execution": 3,
+          "input||org.apache.maven.model": 2,
+          "input||org.apache.maven.plugin.internal": 2,
+          "input||org.apache.maven.project": 2,
+          "input||org.apache.maven.artifact.repository.metadata": 2,
+          "input||org.apache.maven.classrealm": 2,
+          "input||org.apache.maven.artifact.repository": 1
+        },
+        "total_smells": 53
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 209,
+          "Broken Hierarchy": 31,
+          "Deficient Encapsulation": 25,
+          "Feature Envy": 18,
+          "Insufficient Modularization": 11,
+          "Broken Modularization": 9,
+          "Cyclically-dependent Modularization": 5,
+          "Missing Hierarchy": 2,
+          "Rebellious Hierarchy": 1,
+          "Cyclic Hierarchy": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 6,
+          "input||org.apache.maven.lifecycle.internal||DefaultLifecycleExecutionPlanCalculator": 2,
+          "input||org.apache.maven.api.services||LookupException": 2,
+          "input||org.apache.maven.repository.legacy||WagonA": 2,
+          "input||org.apache.maven.model.merge||MavenModelMerger": 2,
+          "input||org.apache.maven.api.services||ToolchainsBuilderException": 2,
+          "input||org.apache.maven.api.services||ProjectBuilderException": 2,
+          "input||org.apache.maven.project||LegacyLocalRepositoryManager": 2,
+          "input||org.apache.maven.artifact.repository.metadata||GroupRepositoryMetadata": 2,
+          "input||org.apache.maven.bridge||MavenRepositorySystem": 2
+        },
+        "total_smells": 312
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 455,
+          "Magic Number": 263,
+          "Long Parameter List": 104,
+          "Long Identifier": 42,
+          "Complex Method": 39,
+          "Complex Conditional": 38,
+          "Empty catch clause": 20,
+          "Long Method": 9,
+          "Missing default": 5
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 15,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 14,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 13,
+          "input||org.apache.maven.cli||CLIReportingUtilsTest||testFormatDuration": 9,
+          "input||org.apache.maven.plugin||MethodMap||isMethodInvocationConvertible": 6,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 6,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolve": 5,
+          "input||org.apache.maven.artifact.versioning||DefaultArtifactVersionTest||testVersionParsing": 5,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory||newRepositorySession": 5,
+          "input||org.apache.maven.repository.metadata||DefaultClasspathTransformationTest||setUp": 5
+        },
+        "total_smells": 975
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 29,
+          "Global State": 3
+        },
+        "top_entities": {
+          "input||org.apache.maven.project||DefaultProjectBuildingHelper": 1,
+          "input||org.apache.maven.project||AbstractMavenProjectTestCase": 1,
+          "input||org.apache.maven.repository.legacy||DefaultWagonManagerTest": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory": 1,
+          "input||org.apache.maven.plugin||PluginParameterExpressionEvaluatorTest": 1,
+          "input||org.apache.maven.lifecycle.internal||MojoDescriptorCreator": 1,
+          "input||org.apache.maven.repository||RepositorySystem": 1,
+          "input||org.apache.maven.cli.configuration||SettingsXmlConfigurationProcessor": 1,
+          "input||org.apache.maven.internal.impl||DefaultProjectManager": 1,
+          "input||org.apache.maven.lifecycle.internal.stub||LifecycleExecutionPlanCalculatorStub": 1
+        },
+        "total_smells": 32
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 161,
+          "Missing assertion": 52,
+          "Empty test": 8,
+          "Conditional test logic": 2,
+          "Exceptional handling": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.plugin.descriptor||PluginDescriptorBuilderTest||testBuildReader": 1,
+          "input||org.apache.maven.project.inheritance.t02||ProjectInheritanceTest||testProjectInheritance": 1,
+          "input||org.apache.maven.repository.metadata||DefaultGraphConflictResolverTest||testTestResolution": 1,
+          "input||org.apache.maven.model.path||DefaultUrlNormalizerTest||testPreservationOfDoubleSlashes": 1,
+          "input||org.apache.maven.toolchain.building||DefaultToolchainsBuilderTest||testBuildRequestWithUserToolchains": 1,
+          "input||org.apache.maven.model.profile.activation||JdkVersionProfileActivatorTest||testVersionRangeExclusiveUpperBound": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactoryTest||isNoSnapshotUpdatesTest": 1,
+          "input||org.apache.maven.artifact.handler||ArtifactHandlerTest||testAptConsistency": 1,
+          "input||org.apache.maven.graph||DefaultProjectDependencyGraphTest||testGetSortedProjects": 1,
+          "input||org.apache.maven.lifecycle.mapping||LifecyclePhaseTest||testSet": 1
+        },
+        "total_smells": 224
+      },
+      "total_smells": 1596,
+      "user": "user4"
+    },
+    "commit5": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 15,
+          "Feature Concentration": 14,
+          "Unstable Dependency": 10,
+          "God Component": 6
+        },
+        "top_entities": {
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.model.building": 5,
+          "input||org.apache.maven.lifecycle.internal": 4,
+          "input||org.apache.maven.project": 2,
+          "input||org.apache.maven.lifecycle.internal.stub": 2,
+          "input||org.apache.maven.classrealm": 2,
+          "input||org.apache.maven.plugin": 2,
+          "input||org.apache.maven.execution": 2,
+          "input||org.apache.maven.api.services": 1,
+          "input||org.apache.maven.settings": 1
+        },
+        "total_smells": 45
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 175,
+          "Broken Hierarchy": 22,
+          "Insufficient Modularization": 18,
+          "Deficient Encapsulation": 16,
+          "Feature Envy": 15,
+          "Broken Modularization": 11,
+          "Rebellious Hierarchy": 3,
+          "Cyclically-dependent Modularization": 3,
+          "Cyclic Hierarchy": 2,
+          "Wide Hierarchy": 1,
+          "Missing Hierarchy": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 6,
+          "input||org.apache.maven.artifact||UnknownRepositoryLayoutException": 2,
+          "input||org.apache.maven.graph||DefaultGraphBuilderTest.ScenarioBuilder": 2,
+          "input||org.apache.maven.cli.logging||Slf4jStdoutLogger": 2,
+          "input||org.apache.maven.api.services||ArtifactResolverException": 2,
+          "input||org.apache.maven.model.building||FilterModelBuildingRequest": 2,
+          "input||org.apache.maven.repository||ArtifactTransferEvent": 2,
+          "input||org.apache.maven.model.building||BuildModelSourceTransformer": 2,
+          "input||org.apache.maven.toolchain.java||JavaToolchainImpl": 2,
+          "input||org.apache.maven.plugin.internal||DefaultMavenPluginManager": 2
+        },
+        "total_smells": 267
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 382,
+          "Magic Number": 247,
+          "Long Parameter List": 92,
+          "Long Identifier": 33,
+          "Complex Method": 30,
+          "Complex Conditional": 27,
+          "Empty catch clause": 12,
+          "Long Method": 8,
+          "Missing default": 5
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 11,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 10,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 10,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 7,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 7,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory||newRepositorySession": 7,
+          "input||org.apache.maven.cli||CLIReportingUtilsTest||testFormatDuration": 7,
+          "input||org.apache.maven.lifecycle||LifecycleExecutorTest||testCalculationOfBuildPlanWithMultipleExecutionsOfModello": 6,
+          "input||org.apache.maven.toolchain.merge||MavenToolchainMergerTest||testMergeJdkExtend": 6,
+          "input||org.apache.maven.model.validation||DefaultModelValidator||validate20RawDependencies": 5
+        },
+        "total_smells": 836
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 23,
+          "Global State": 4
+        },
+        "top_entities": {
+          "input||org.apache.maven.internal.impl||DefaultProjectBuilder": 1,
+          "input||org.apache.maven.project||MavenProject": 1,
+          "input||org.apache.maven.repository.legacy||LegacyRepositorySystem": 1,
+          "input||org.apache.maven.artifact.manager||DefaultWagonManager": 1,
+          "input||org.apache.maven||MavenLifecycleParticipantTest.InjectReactorDependency": 1,
+          "input||org.apache.maven.settings.building||DefaultSettingsBuilder": 1,
+          "input||org.apache.maven.repository.metadata||MetadataResolutionResult": 1,
+          "input||org.apache.maven.model.v4||Xpp3DomPerfTest.AdditionState": 1,
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 1,
+          "input||org.apache.maven.internal.impl||AbstractSession": 1
+        },
+        "total_smells": 27
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 136,
+          "Missing assertion": 46,
+          "Empty test": 9,
+          "Conditional test logic": 1
+        },
+        "top_entities": {
+          "input||org.apache.maven.plugin||PluginManagerTest||testMojoThatIsPresentInTheCurrentBuild": 2,
+          "input||org.apache.maven.artifact.handler||ArtifactHandlerTest||testAptConsistency": 2,
+          "input||org.apache.maven.project||PomConstructionTest||testMailingListsAreInheritedButNotAggregated": 1,
+          "input||org.apache.maven.model.validation||DefaultModelValidatorTest||testBadImportScopeClassifier": 1,
+          "input||org.apache.maven.repository.legacy||DefaultUpdateCheckManagerTest||testMissingPom": 1,
+          "input||org.apache.maven.project||PomConstructionTest||testReportingPluginConfig": 1,
+          "input||org.apache.maven.building||DefaultProblemTest||testGetLocation": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveRangeWithManagedVersion": 1,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testUrls": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveCorrectDependenciesWhenDifferentDependenciesOnNewestVersionReplaced": 1
+        },
+        "total_smells": 192
+      },
+      "total_smells": 1367,
+      "user": "user5"
+    }
+  },
+  "full_repo_smell_density": {
+    "commit2": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 0.39,
+          "Feature Concentration": 0.24,
+          "Unstable Dependency": 0.18,
+          "God Component": 0.05
+        },
+        "top_entities": {
+          "input||org.apache.maven": 8,
+          "input||org.apache.maven.artifact": 6,
+          "input||org.apache.maven.lifecycle": 3,
+          "input||org.apache.maven.model.building": 3,
+          "input||org.apache.maven.model.profile": 3,
+          "input||org.apache.maven.model.path": 2,
+          "input||org.apache.maven.execution": 2,
+          "input||org.apache.maven.plugin": 2,
+          "input||org.apache.maven.repository.legacy.resolver.transform": 2,
+          "input||org.apache.maven.api.services": 2
+        },
+        "total_smells": 0.86
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 3.31,
+          "Broken Hierarchy": 0.53,
+          "Feature Envy": 0.33,
+          "Deficient Encapsulation": 0.25,
+          "Insufficient Modularization": 0.23,
+          "Cyclically-dependent Modularization": 0.16,
+          "Broken Modularization": 0.16,
+          "Cyclic Hierarchy": 0.04,
+          "Wide Hierarchy": 0.01,
+          "Rebellious Hierarchy": 0.01,
+          "Missing Hierarchy": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 11,
+          "input||org.apache.maven.artifact.repository.metadata||ArtifactRepositoryMetadata": 3,
+          "input||org.apache.maven.internal.impl||DefaultMessageBuilder": 2,
+          "input||org.apache.maven.project||EmptyLifecycleExecutor": 2,
+          "input||org.apache.maven.artifact.repository.metadata||SnapshotArtifactRepositoryMetadata": 2,
+          "input||org.apache.maven.lifecycle.providers.packaging||JarLifecycleMappingProvider": 2,
+          "input||org.apache.maven.repository||MetadataResolutionResult": 2,
+          "input||org.apache.maven.settings.building||UrlSettingsSource": 2,
+          "input||org.apache.maven.cli.transfer||BatchModeMavenTransferListener": 2,
+          "input||org.apache.maven.api.services||DependencyCollectorRequest.DependencyCollectorRequestBuilder": 2
+        },
+        "total_smells": 5.05
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 7.27,
+          "Magic Number": 4.51,
+          "Long Parameter List": 1.69,
+          "Complex Method": 0.72,
+          "Long Identifier": 0.61,
+          "Complex Conditional": 0.59,
+          "Empty catch clause": 0.23,
+          "Missing default": 0.11,
+          "Long Method": 0.08
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 22,
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 21,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 12,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 9,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 9,
+          "input||org.apache.maven.lifecycle||LifecycleExecutorTest||testCalculationOfBuildPlanWithMultipleExecutionsOfModello": 8,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolve": 8,
+          "input||org.apache.maven.plugin||MethodMap||isStrictMethodInvocationConvertible": 7,
+          "input||org.apache.maven.artifact.versioning||DefaultArtifactVersionTest||testVersionParsing": 7,
+          "input||org.apache.maven.project||PomConstructionTest||testBuildPluginInterpolation": 7
+        },
+        "total_smells": 15.81
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 0.43,
+          "Global State": 0.09
+        },
+        "top_entities": {
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 2,
+          "input||org.apache.maven.settings.building||DefaultSettingsBuilder": 1,
+          "input||org.apache.maven.model.building||DefaultModelBuilderFactory": 1,
+          "input||org.apache.maven.internal.impl||DefaultProjectManager": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest": 1,
+          "input||org.apache.maven.project||PomConstructionTest": 1,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest": 1,
+          "input||org.apache.maven.internal.impl||TestApi": 1,
+          "input||org.apache.maven.plugin||DefaultBuildPluginManager": 1,
+          "input||org.apache.maven.plugin||ReflectionValueExtractorTest.Dependency": 1
+        },
+        "total_smells": 0.52
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 2.62,
+          "Missing assertion": 0.88,
+          "Empty test": 0.08,
+          "Exceptional handling": 0.04,
+          "Conditional test logic": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest||testTransitiveResolutionOrder": 2,
+          "input||org.apache.maven.project.artifact||MavenMetadataSourceTest||testShouldNotCarryExclusionsOverFromDependencyToDependency": 2,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testFlatTrickyUrls": 2,
+          "input||org.apache.maven.artifact.versioning||VersionRangeTest||testOrder0": 2,
+          "input||org.apache.maven.repository.internal||RepositorySystemTest||testResolveVersion": 2,
+          "input||org.apache.maven.building||DefaultProblemCollectorTest||testSetSource": 1,
+          "input||org.apache.maven.project||DefaultMavenProjectBuilderTest||testBuildParentVersionRangeLocallyWithoutChildVersion": 1,
+          "input||org.apache.maven.lifecycle||DefaultLifecyclesTest||testCustomLifecycle": 1,
+          "input||org.apache.maven.project||GraphTest||testGraph": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactoryTest||isNoSnapshotUpdatesTest": 1
+        },
+        "total_smells": 3.63
+      },
+      "total_smells": 25.86,
+      "user": "user2"
+    },
+    "commit3": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Feature Concentration": 0.3,
+          "Cyclic Dependency": 0.25,
+          "Unstable Dependency": 0.15,
+          "God Component": 0.04,
+          "Dense Structure": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.artifact": 6,
+          "input||org.apache.maven.model.building": 6,
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.lifecycle.internal": 3,
+          "input||org.apache.maven.project": 3,
+          "input||org.apache.maven.artifact.versioning": 2,
+          "input||org.apache.maven.artifact.metadata": 2,
+          "input||org.apache.maven.model": 2,
+          "input||org.apache.maven.artifact.repository": 2,
+          "input||<All packages>": 1
+        },
+        "total_smells": 0.76
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 2.99,
+          "Broken Hierarchy": 0.45,
+          "Deficient Encapsulation": 0.29,
+          "Broken Modularization": 0.21,
+          "Insufficient Modularization": 0.2,
+          "Feature Envy": 0.16,
+          "Cyclically-dependent Modularization": 0.09,
+          "Rebellious Hierarchy": 0.03,
+          "Missing Hierarchy": 0.03,
+          "Cyclic Hierarchy": 0.01,
+          "Multipath Hierarchy": 0.01,
+          "Unexploited Encapsulation": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 4,
+          "input||org.apache.maven.project.artifact||ActiveProjectArtifact": 2,
+          "input||org.apache.maven.lifecycle.internal.stub||LifecycleTaskSegmentCalculatorStub": 2,
+          "input||org.apache.maven.artifact.repository||ArtifactRepository": 2,
+          "input||org.apache.maven.api.services||ToolchainsBuilderException": 2,
+          "input||org.apache.maven.repository.legacy||DefaultUpdateCheckManagerTest": 2,
+          "input||org.apache.maven.model.building||ArtifactModelSource": 2,
+          "input||org.apache.maven.plugin||DefaultExtensionRealmCache.CacheKey": 2,
+          "input||org.apache.maven.toolchain||DefaultToolchain": 2,
+          "input||org.apache.maven||MissingModuleException": 2
+        },
+        "total_smells": 4.49
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 6.64,
+          "Magic Number": 3.83,
+          "Long Parameter List": 1.55,
+          "Complex Method": 0.61,
+          "Long Identifier": 0.54,
+          "Complex Conditional": 0.48,
+          "Missing default": 0.15,
+          "Empty catch clause": 0.14,
+          "Long Method": 0.11
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 16,
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 14,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 11,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 8,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolveTransitively": 8,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 7,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 7,
+          "input||org.apache.maven.project||ProjectSorter||ProjectSorter": 7,
+          "input||org.apache.maven.toolchain.merge||MavenToolchainMergerTest||testMergeJdkExtend": 6,
+          "input||org.apache.maven.repository.metadata||DefaultClasspathTransformationTest||setUp": 6
+        },
+        "total_smells": 14.05
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 0.42,
+          "Global State": 0.04
+        },
+        "top_entities": {
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 1,
+          "input||org.apache.maven.lifecycle.internal||LifecycleModuleBuilder": 1,
+          "input||org.apache.maven.project||DefaultProjectBuilder": 1,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest": 1,
+          "input||org.apache.maven.lifecycle.internal||DefaultLifecycleExecutionPlanCalculator": 1,
+          "input||org.apache.maven.plugin||ReflectionValueExtractorTest.Project": 1,
+          "input||org.apache.maven.project||AbstractMavenProjectTestCase": 1,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver": 1,
+          "input||org.apache.maven.lifecycle.internal.builder.multithreaded||MultiThreadedBuilder": 1,
+          "input||org.apache.maven.lifecycle.internal.builder||BuilderCommon": 1
+        },
+        "total_smells": 0.45
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 2.47,
+          "Missing assertion": 0.54,
+          "Empty test": 0.13,
+          "Exceptional handling": 0.05,
+          "Conditional test logic": 0.04
+        },
+        "top_entities": {
+          "input||org.apache.maven.repository.internal||RepositorySystemTest||testResolveVersionRange": 2,
+          "input||org.apache.maven.plugin||PluginManagerTest||testMojoWhereInternallyStatedDependencyIsOverriddenByProject": 2,
+          "input||org.apache.maven.artifact.versioning||VersionRangeTest||testOrder0": 2,
+          "input||org.apache.maven.repository.internal||DefaultArtifactDescriptorReaderTest||testMng5459": 2,
+          "input||org.apache.maven.project||ProjectBuilderTest||testReadParentAndChildWithRegularVersionSetParentFile": 2,
+          "input||org.apache.maven.project||PomConstructionTest||testPluginDeclarationsRetainPomOrderAfterInjectionOfDefaultPlugins": 2,
+          "input||org.apache.maven.artifact.resolver||ArtifactResolverTest||testTransitiveResolutionOrder": 2,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testFlatTrickyUrls": 2,
+          "input||org.apache.maven.cli||MavenCliTest||testCalculateDegreeOfConcurrency": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveRuntimeScopeOverTestScope": 1
+        },
+        "total_smells": 3.23
+      },
+      "total_smells": 22.98,
+      "user": "user3"
+    },
+    "commit4": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 0.28,
+          "Feature Concentration": 0.19,
+          "Unstable Dependency": 0.15,
+          "God Component": 0.04,
+          "Dense Structure": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.model.building": 6,
+          "input||org.apache.maven.artifact": 3,
+          "input||org.apache.maven.execution": 3,
+          "input||org.apache.maven.model": 2,
+          "input||org.apache.maven.plugin.internal": 2,
+          "input||org.apache.maven.project": 2,
+          "input||org.apache.maven.artifact.repository.metadata": 2,
+          "input||org.apache.maven.classrealm": 2,
+          "input||org.apache.maven.artifact.repository": 1
+        },
+        "total_smells": 0.67
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 2.63,
+          "Broken Hierarchy": 0.39,
+          "Deficient Encapsulation": 0.32,
+          "Feature Envy": 0.23,
+          "Insufficient Modularization": 0.14,
+          "Broken Modularization": 0.11,
+          "Cyclically-dependent Modularization": 0.06,
+          "Missing Hierarchy": 0.03,
+          "Rebellious Hierarchy": 0.01,
+          "Cyclic Hierarchy": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 6,
+          "input||org.apache.maven.lifecycle.internal||DefaultLifecycleExecutionPlanCalculator": 2,
+          "input||org.apache.maven.api.services||LookupException": 2,
+          "input||org.apache.maven.repository.legacy||WagonA": 2,
+          "input||org.apache.maven.model.merge||MavenModelMerger": 2,
+          "input||org.apache.maven.api.services||ToolchainsBuilderException": 2,
+          "input||org.apache.maven.api.services||ProjectBuilderException": 2,
+          "input||org.apache.maven.project||LegacyLocalRepositoryManager": 2,
+          "input||org.apache.maven.artifact.repository.metadata||GroupRepositoryMetadata": 2,
+          "input||org.apache.maven.bridge||MavenRepositorySystem": 2
+        },
+        "total_smells": 3.93
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 5.74,
+          "Magic Number": 3.31,
+          "Long Parameter List": 1.31,
+          "Long Identifier": 0.53,
+          "Complex Method": 0.49,
+          "Complex Conditional": 0.48,
+          "Empty catch clause": 0.25,
+          "Long Method": 0.11,
+          "Missing default": 0.06
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 15,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 14,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": 13,
+          "input||org.apache.maven.cli||CLIReportingUtilsTest||testFormatDuration": 9,
+          "input||org.apache.maven.plugin||MethodMap||isMethodInvocationConvertible": 6,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 6,
+          "input||org.apache.maven.artifact.resolver||DefaultArtifactResolver||resolve": 5,
+          "input||org.apache.maven.artifact.versioning||DefaultArtifactVersionTest||testVersionParsing": 5,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory||newRepositorySession": 5,
+          "input||org.apache.maven.repository.metadata||DefaultClasspathTransformationTest||setUp": 5
+        },
+        "total_smells": 12.29
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 0.37,
+          "Global State": 0.04
+        },
+        "top_entities": {
+          "input||org.apache.maven.project||DefaultProjectBuildingHelper": 1,
+          "input||org.apache.maven.project||AbstractMavenProjectTestCase": 1,
+          "input||org.apache.maven.repository.legacy||DefaultWagonManagerTest": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory": 1,
+          "input||org.apache.maven.plugin||PluginParameterExpressionEvaluatorTest": 1,
+          "input||org.apache.maven.lifecycle.internal||MojoDescriptorCreator": 1,
+          "input||org.apache.maven.repository||RepositorySystem": 1,
+          "input||org.apache.maven.cli.configuration||SettingsXmlConfigurationProcessor": 1,
+          "input||org.apache.maven.internal.impl||DefaultProjectManager": 1,
+          "input||org.apache.maven.lifecycle.internal.stub||LifecycleExecutionPlanCalculatorStub": 1
+        },
+        "total_smells": 0.4
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 2.03,
+          "Missing assertion": 0.66,
+          "Empty test": 0.1,
+          "Conditional test logic": 0.03,
+          "Exceptional handling": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.plugin.descriptor||PluginDescriptorBuilderTest||testBuildReader": 1,
+          "input||org.apache.maven.project.inheritance.t02||ProjectInheritanceTest||testProjectInheritance": 1,
+          "input||org.apache.maven.repository.metadata||DefaultGraphConflictResolverTest||testTestResolution": 1,
+          "input||org.apache.maven.model.path||DefaultUrlNormalizerTest||testPreservationOfDoubleSlashes": 1,
+          "input||org.apache.maven.toolchain.building||DefaultToolchainsBuilderTest||testBuildRequestWithUserToolchains": 1,
+          "input||org.apache.maven.model.profile.activation||JdkVersionProfileActivatorTest||testVersionRangeExclusiveUpperBound": 1,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactoryTest||isNoSnapshotUpdatesTest": 1,
+          "input||org.apache.maven.artifact.handler||ArtifactHandlerTest||testAptConsistency": 1,
+          "input||org.apache.maven.graph||DefaultProjectDependencyGraphTest||testGetSortedProjects": 1,
+          "input||org.apache.maven.lifecycle.mapping||LifecyclePhaseTest||testSet": 1
+        },
+        "total_smells": 2.82
+      },
+      "total_smells": 20.12,
+      "user": "user4"
+    },
+    "commit5": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 0.19,
+          "Feature Concentration": 0.18,
+          "Unstable Dependency": 0.13,
+          "God Component": 0.08
+        },
+        "top_entities": {
+          "input||org.apache.maven": 6,
+          "input||org.apache.maven.model.building": 5,
+          "input||org.apache.maven.lifecycle.internal": 4,
+          "input||org.apache.maven.project": 2,
+          "input||org.apache.maven.lifecycle.internal.stub": 2,
+          "input||org.apache.maven.classrealm": 2,
+          "input||org.apache.maven.plugin": 2,
+          "input||org.apache.maven.execution": 2,
+          "input||org.apache.maven.api.services": 1,
+          "input||org.apache.maven.settings": 1
+        },
+        "total_smells": 0.57
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Unutilized Abstraction": 2.21,
+          "Broken Hierarchy": 0.28,
+          "Insufficient Modularization": 0.23,
+          "Deficient Encapsulation": 0.2,
+          "Feature Envy": 0.19,
+          "Broken Modularization": 0.14,
+          "Rebellious Hierarchy": 0.04,
+          "Cyclically-dependent Modularization": 0.04,
+          "Cyclic Hierarchy": 0.03,
+          "Wide Hierarchy": 0.01,
+          "Missing Hierarchy": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||MavenCliTest": 6,
+          "input||org.apache.maven.artifact||UnknownRepositoryLayoutException": 2,
+          "input||org.apache.maven.graph||DefaultGraphBuilderTest.ScenarioBuilder": 2,
+          "input||org.apache.maven.cli.logging||Slf4jStdoutLogger": 2,
+          "input||org.apache.maven.api.services||ArtifactResolverException": 2,
+          "input||org.apache.maven.model.building||FilterModelBuildingRequest": 2,
+          "input||org.apache.maven.repository||ArtifactTransferEvent": 2,
+          "input||org.apache.maven.model.building||BuildModelSourceTransformer": 2,
+          "input||org.apache.maven.toolchain.java||JavaToolchainImpl": 2,
+          "input||org.apache.maven.plugin.internal||DefaultMavenPluginManager": 2
+        },
+        "total_smells": 3.37
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Long Statement": 4.81,
+          "Magic Number": 3.11,
+          "Long Parameter List": 1.16,
+          "Long Identifier": 0.42,
+          "Complex Method": 0.38,
+          "Complex Conditional": 0.34,
+          "Empty catch clause": 0.15,
+          "Long Method": 0.1,
+          "Missing default": 0.06
+        },
+        "top_entities": {
+          "input||org.apache.maven.cli||CLIManager||CLIManager": 11,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": 10,
+          "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": 10,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": 7,
+          "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": 7,
+          "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory||newRepositorySession": 7,
+          "input||org.apache.maven.cli||CLIReportingUtilsTest||testFormatDuration": 7,
+          "input||org.apache.maven.lifecycle||LifecycleExecutorTest||testCalculationOfBuildPlanWithMultipleExecutionsOfModello": 6,
+          "input||org.apache.maven.toolchain.merge||MavenToolchainMergerTest||testMergeJdkExtend": 6,
+          "input||org.apache.maven.model.validation||DefaultModelValidator||validate20RawDependencies": 5
+        },
+        "total_smells": 10.54
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Excessive Dependency": 0.29,
+          "Global State": 0.05
+        },
+        "top_entities": {
+          "input||org.apache.maven.internal.impl||DefaultProjectBuilder": 1,
+          "input||org.apache.maven.project||MavenProject": 1,
+          "input||org.apache.maven.repository.legacy||LegacyRepositorySystem": 1,
+          "input||org.apache.maven.artifact.manager||DefaultWagonManager": 1,
+          "input||org.apache.maven||MavenLifecycleParticipantTest.InjectReactorDependency": 1,
+          "input||org.apache.maven.settings.building||DefaultSettingsBuilder": 1,
+          "input||org.apache.maven.repository.metadata||MetadataResolutionResult": 1,
+          "input||org.apache.maven.model.v4||Xpp3DomPerfTest.AdditionState": 1,
+          "input||org.apache.maven||AbstractCoreMavenComponentTestCase": 1,
+          "input||org.apache.maven.internal.impl||AbstractSession": 1
+        },
+        "total_smells": 0.34
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Assertion roulette": 1.71,
+          "Missing assertion": 0.58,
+          "Empty test": 0.11,
+          "Conditional test logic": 0.01
+        },
+        "top_entities": {
+          "input||org.apache.maven.plugin||PluginManagerTest||testMojoThatIsPresentInTheCurrentBuild": 2,
+          "input||org.apache.maven.artifact.handler||ArtifactHandlerTest||testAptConsistency": 2,
+          "input||org.apache.maven.project||PomConstructionTest||testMailingListsAreInheritedButNotAggregated": 1,
+          "input||org.apache.maven.model.validation||DefaultModelValidatorTest||testBadImportScopeClassifier": 1,
+          "input||org.apache.maven.repository.legacy||DefaultUpdateCheckManagerTest||testMissingPom": 1,
+          "input||org.apache.maven.project||PomConstructionTest||testReportingPluginConfig": 1,
+          "input||org.apache.maven.building||DefaultProblemTest||testGetLocation": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveRangeWithManagedVersion": 1,
+          "input||org.apache.maven.model.inheritance||DefaultInheritanceAssemblerTest||testUrls": 1,
+          "input||org.apache.maven.repository.legacy.resolver||DefaultArtifactCollectorTest||testResolveCorrectDependenciesWhenDifferentDependenciesOnNewestVersionReplaced": 1
+        },
+        "total_smells": 2.42
+      },
+      "total_smells": 17.23,
+      "user": "user5"
+    }
+  },
+  "commit_changes": {
+    "commit2": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 1,
+          "Unstable Dependency": 1
+        },
+        "total_smells": 2
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Broken Hierarchy": 5,
+          "Feature Envy": 8,
+          "Cyclically-dependent Modularization": 3,
+          "Cyclic Hierarchy": 1,
+          "Wide Hierarchy": 1
+        },
+        "total_smells": 18
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+
+        },
+        "total_smells": 0
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Global State": 1
+        },
+        "total_smells": 1
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Missing assertion": 7,
+          "Exceptional handling": 2
+        },
+        "total_smells": 9
+      },
+      "total_smells": 30,
+      "user": "user2"
+    },
+    "commit3": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Feature Concentration": 5,
+          "Dense Structure": 1
+        },
+        "total_smells": 6
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Deficient Encapsulation": 3,
+          "Broken Modularization": 4,
+          "Rebellious Hierarchy": 1,
+          "Missing Hierarchy": 1,
+          "Multipath Hierarchy": 1,
+          "Unexploited Encapsulation": 1
+        },
+        "total_smells": 11
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Missing default": 3,
+          "Long Method": 3
+        },
+        "total_smells": 6
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+
+        },
+        "total_smells": 0
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Empty test": 4,
+          "Exceptional handling": 1,
+          "Conditional test logic": 2
+        },
+        "total_smells": 7
+      },
+      "total_smells": 30,
+      "user": "user3"
+    },
+    "commit4": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "Cyclic Dependency": 2
+        },
+        "total_smells": 2
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Deficient Encapsulation": 2,
+          "Feature Envy": 5
+        },
+        "total_smells": 7
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+          "Empty catch clause": 9
+        },
+        "total_smells": 9
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+
+        },
+        "total_smells": 0
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Missing assertion": 9
+        },
+        "total_smells": 9
+      },
+      "total_smells": 27,
+      "user": "user4"
+    },
+    "commit5": {
+      "Architecture Smell": {
+        "smell_distribution": {
+          "God Component": 3
+        },
+        "total_smells": 3
+      },
+      "Design Smell": {
+        "smell_distribution": {
+          "Insufficient Modularization": 7,
+          "Broken Modularization": 2,
+          "Rebellious Hierarchy": 2,
+          "Cyclic Hierarchy": 1,
+          "Wide Hierarchy": 1
+        },
+        "total_smells": 13
+      },
+      "Implementation Smell": {
+        "smell_distribution": {
+
+        },
+        "total_smells": 0
+      },
+      "Testability Smell": {
+        "smell_distribution": {
+          "Global State": 1
+        },
+        "total_smells": 1
+      },
+      "Test Smell": {
+        "smell_distribution": {
+          "Empty test": 1
+        },
+        "total_smells": 1
+      },
+      "total_smells": 18,
+      "user": "user5"
+    }
+  }
+}

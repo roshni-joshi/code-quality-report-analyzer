@@ -1,0 +1,51 @@
+.hotspot .charts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.hotspot-container {
+  margin-top: 20px;
+}
+
+.hotspot-container .test {
+  justify-content: space-between;
+}
+
+.hotspot .dropdown-dropdowns {
+  display: flex;
+  align-items: center;
+}
+
+.branch-dropdowns {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.branch-dropdowns h4 {
+  margin: auto 10px;
+}
+
+.user-dropdown {
+  display: flex;
+  float: right;
+  width: fit-content;
+  margin-right: 20px;
+}
+
+.user-dropdown select {
+  width: fit-content;
+}
+
+.hotspot-heading h1 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.common-heading h2 {
+  font-size: 25px;
+}

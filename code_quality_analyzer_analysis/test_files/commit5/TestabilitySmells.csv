@@ -1,0 +1,28 @@
+Project Name,Package Name,Type Name,Testability Smell,Cause of the Smell
+input,org.apache.maven.internal.impl,DefaultProjectBuilder,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 13
+input,org.apache.maven.plugin.internal,DefaultMavenPluginManager,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 25
+input,org.apache.maven.plugin,DefaultBuildPluginManager,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 24
+input,org.apache.maven.plugin,ReflectionValueExtractorTest.Build,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+input,org.apache.maven.api,Session,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 12
+input,org.apache.maven.project,TestProjectBuilder,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 10
+input,org.apache.maven.project,AbstractMavenProjectTestCase,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8
+input,org.apache.maven.lifecycle.internal,DefaultLifecycleExecutionPlanCalculator,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 18
+input,org.apache.maven.project,DefaultProjectBuilder,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 31
+input,org.apache.maven.lifecycle.internal,LifecycleDependencyResolver,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 12
+input,org.apache.maven.execution,DefaultMavenExecutionRequest,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 10
+input,org.apache.maven.internal.impl,DefaultSession,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 10
+input,org.apache.maven.lifecycle.internal.builder,BuilderCommon,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 12
+input,org.apache.maven.project.artifact,DefaultMavenMetadataCache.CacheKey,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+input,org.apache.maven.project,MavenProject,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 11
+input,org.apache.maven.lifecycle,LifecycleExecutorSubModulesTest,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8
+input,org.apache.maven.lifecycle.internal.stub,LifecycleExecutionPlanCalculatorStub,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 12
+input,org.apache.maven.repository.internal,MavenResolverModule,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8
+input,org.apache.maven.internal.impl,AbstractSession,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 21
+input,org.apache.maven,AbstractCoreMavenComponentTestCase,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8
+input,org.apache.maven.model.v4,Xpp3DomPerfTest.AdditionState,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+input,org.apache.maven.repository.metadata,MetadataResolutionResult,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 10
+input,org.apache.maven.settings.building,DefaultSettingsBuilder,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 11
+input,org.apache.maven,MavenLifecycleParticipantTest.InjectReactorDependency,Global State,The tool detected the smell in this class because the class can be accessed as a `global` state.
+input,org.apache.maven.artifact.manager,DefaultWagonManager,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 9
+input,org.apache.maven.repository.legacy,LegacyRepositorySystem,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 22
+input,org.apache.maven.graph,DefaultGraphBuilderTest,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 15

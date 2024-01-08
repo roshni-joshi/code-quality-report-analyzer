@@ -1,0 +1,55 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Environment & packages
+.env
+.venv/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# PyCharm
+.idea/
+*.iml
+
+# Database
+*.sqlite3
+
+# OS specific
+*.DS_Store  # macOS
+Thumbs.db   # Windows
+.DS_Store?  # macOS network share
+._*         # macOS
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/code-quality-analyzer-frontend/node_modules
+/code-quality-analyzer-frontend/.pnp
+/code-quality-analyzer-frontend.pnp.js
+
+# testing
+/code-quality-analyzer-frontend/coverage
+
+# production
+/code-quality-analyzer-frontend/build
+
+# misc
+/code-quality-analyzer-frontend/.DS_Store
+/code-quality-analyzer-frontend/.env.local
+/code-quality-analyzer-frontend/.env.development.local
+/code-quality-analyzer-frontend/.env.test.local
+/code-quality-analyzer-frontend/.env.production.local
+
+/code-quality-analyzer-frontend/npm-debug.log*
+/code-quality-analyzer-frontend/yarn-debug.log*
+/code-quality-analyzer-frontend/yarn-error.log*

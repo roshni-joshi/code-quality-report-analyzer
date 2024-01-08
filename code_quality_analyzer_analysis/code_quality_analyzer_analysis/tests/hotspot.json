@@ -1,0 +1,296 @@
+{
+  "top_classes_list": [
+    {
+      "input||org.apache.maven.cli||MavenCliTest": {
+        "smell_distribution": {
+          "Abstraction": 7,
+          "Encapsulation": 0,
+          "Modularization": 1,
+          "Hierarchy": 0
+        },
+        "total_smells": 8
+      }
+    },
+    {
+      "input||org.apache.maven.repository.legacy||DefaultUpdateCheckManagerTest": {
+        "smell_distribution": {
+          "Abstraction": 4,
+          "Encapsulation": 0,
+          "Modularization": 0,
+          "Hierarchy": 0
+        },
+        "total_smells": 4
+      }
+    },
+    {
+      "input||org.apache.maven.plugin.descriptor||MojoDescriptor": {
+        "smell_distribution": {
+          "Abstraction": 0,
+          "Encapsulation": 1,
+          "Modularization": 2,
+          "Hierarchy": 0
+        },
+        "total_smells": 3
+      }
+    },
+    {
+      "input||org.apache.maven.model.building||DefaultModelBuilder": {
+        "smell_distribution": {
+          "Abstraction": 0,
+          "Encapsulation": 1,
+          "Modularization": 1,
+          "Hierarchy": 1
+        },
+        "total_smells": 3
+      }
+    },
+    {
+      "input||org.apache.maven.lifecycle.providers.packaging||PomLifecycleMappingProvider": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 0,
+          "Modularization": 0,
+          "Hierarchy": 1
+        },
+        "total_smells": 2
+      }
+    },
+    {
+      "input||org.apache.maven.api.services||ToolchainsBuilderRequest.ToolchainsBuilderRequestBuilder": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 0,
+          "Modularization": 1,
+          "Hierarchy": 0
+        },
+        "total_smells": 2
+      }
+    },
+    {
+      "input||org.apache.maven.model.building||BuildModelSourceTransformer": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 1,
+          "Modularization": 0,
+          "Hierarchy": 0
+        },
+        "total_smells": 2
+      }
+    },
+    {
+      "input||org.apache.maven.project||DefaultProjectBuilder.InterimResult": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 0,
+          "Modularization": 1,
+          "Hierarchy": 0
+        },
+        "total_smells": 2
+      }
+    },
+    {
+      "input||org.apache.maven.api.services||ProjectBuilderRequest.DefaultProjectBuilderRequest": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 0,
+          "Modularization": 1,
+          "Hierarchy": 0
+        },
+        "total_smells": 2
+      }
+    },
+    {
+      "input||org.apache.maven.repository||MetadataResolutionRequest": {
+        "smell_distribution": {
+          "Abstraction": 1,
+          "Encapsulation": 0,
+          "Modularization": 1,
+          "Hierarchy": 0
+        },
+        "total_smells": 2
+      }
+    }
+  ],
+  "top_methods_list": [
+    {
+      "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSize": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 24,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 24
+      }
+    },
+    {
+      "input||org.apache.maven.cli||CLIManager||CLIManager": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 20,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 0,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 20
+      }
+    },
+    {
+      "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testSizeWithSelectedScaleUnit": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 15,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 15
+      }
+    },
+    {
+      "input||org.apache.maven.lifecycle||LifecycleExecutorTest||testCalculationOfBuildPlanWithMultipleExecutionsOfModello": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 1,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 12,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 13
+      }
+    },
+    {
+      "input||org.apache.maven.model.inheritance||MergerTest||testMergerPreserveLocations": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 11,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 11
+      }
+    },
+    {
+      "input||org.apache.maven.cli||CLIReportingUtilsTest||testFormatDuration": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 10,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 10
+      }
+    },
+    {
+      "input||org.apache.maven.artifact.versioning||DefaultArtifactVersionTest||testVersionParsing": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 9,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 9
+      }
+    },
+    {
+      "input||org.apache.maven.cli.transfer||FileSizeFormatTest||testProgressedSizeWithSize": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 0,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 0,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 9,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 9
+      }
+    },
+    {
+      "input||org.apache.maven.internal.aether||DefaultRepositorySystemSessionFactory||newRepositorySession": {
+        "smell_distribution": {
+          "Long Method": 0,
+          "Complex Method": 1,
+          "Long Parameter List": 0,
+          "Long Identifier": 5,
+          "Long Statement": 3,
+          "Complex Conditional": 0,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 0,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 9
+      }
+    },
+    {
+      "input||org.apache.maven.repository.legacy.resolver||DefaultLegacyArtifactCollector||recurse": {
+        "smell_distribution": {
+          "Long Method": 1,
+          "Complex Method": 1,
+          "Long Parameter List": 0,
+          "Long Identifier": 0,
+          "Long Statement": 5,
+          "Complex Conditional": 1,
+          "Virtual Method Call from Constructor": 0,
+          "Empty Catch Clause": 0,
+          "Magic Number": 1,
+          "Duplicate Code": 0,
+          "Missing Default": 0
+        },
+        "total_smells": 9
+      }
+    }
+  ]
+}

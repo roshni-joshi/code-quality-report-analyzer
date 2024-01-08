@@ -1,0 +1,16 @@
+/* .dashboardHome {
+  display: flex;
+  background-color: aquamarine;
+} */
+
+.dashboardHome {
+  display: flex;
+  /* height: 100vh; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-color: #f0f0f0; A neutral background color */
+  color: #333; /* Dark text for better readability */
+  font-family: Arial, sans-serif; /* A clean, easy-to-read font */
+  /* margin-left: 200px; Add this line */
+}
